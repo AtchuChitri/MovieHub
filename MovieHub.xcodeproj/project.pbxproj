@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8418345298E352900C0F691 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8418343298E352900C0F691 /* BaseCoordinator.swift */; };
+		A8418346298E352900C0F691 /* BaseCoordinatorContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8418344298E352900C0F691 /* BaseCoordinatorContract.swift */; };
+		A8418348298E356700C0F691 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8418347298E356700C0F691 /* ApiEndpoint.swift */; };
 		A87A9D87298C7E6900D39D93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9D86298C7E6900D39D93 /* AppDelegate.swift */; };
 		A87A9D89298C7E6900D39D93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9D88298C7E6900D39D93 /* SceneDelegate.swift */; };
 		A87A9D8B298C7E6900D39D93 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9D8A298C7E6900D39D93 /* HomeViewController.swift */; };
@@ -16,8 +19,6 @@
 		A87A9D9E298C7E6E00D39D93 /* MovieHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9D9D298C7E6E00D39D93 /* MovieHubTests.swift */; };
 		A87A9DA8298C7E6E00D39D93 /* MovieHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9DA7298C7E6E00D39D93 /* MovieHubUITests.swift */; };
 		A87A9DAA298C7E6E00D39D93 /* MovieHubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9DA9298C7E6E00D39D93 /* MovieHubUITestsLaunchTests.swift */; };
-		A87A9DBD298C829A00D39D93 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9DBC298C829A00D39D93 /* BaseCoordinator.swift */; };
-		A87A9DBF298C830D00D39D93 /* BaseCoordinatorContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9DBE298C830D00D39D93 /* BaseCoordinatorContract.swift */; };
 		A87A9DC3298C84DA00D39D93 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9DC2298C84DA00D39D93 /* SideMenuViewController.swift */; };
 		A87A9DC7298D087F00D39D93 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9DC6298D087F00D39D93 /* SideMenu.swift */; };
 		A87A9DCC298D09D700D39D93 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9DCA298D09D700D39D93 /* SideMenuTableViewCell.swift */; };
@@ -49,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A8418343298E352900C0F691 /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCoordinator.swift; path = MovieHub/CommonFiles/Coordinator/BaseCoordinator.swift; sourceTree = SOURCE_ROOT; };
+		A8418344298E352900C0F691 /* BaseCoordinatorContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCoordinatorContract.swift; path = MovieHub/CommonFiles/Coordinator/BaseCoordinatorContract.swift; sourceTree = SOURCE_ROOT; };
+		A8418347298E356700C0F691 /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
 		A87A9D83298C7E6900D39D93 /* MovieHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87A9D86298C7E6900D39D93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A87A9D88298C7E6900D39D93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,8 +66,6 @@
 		A87A9DA3298C7E6E00D39D93 /* MovieHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87A9DA7298C7E6E00D39D93 /* MovieHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHubUITests.swift; sourceTree = "<group>"; };
 		A87A9DA9298C7E6E00D39D93 /* MovieHubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHubUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A87A9DBC298C829A00D39D93 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
-		A87A9DBE298C830D00D39D93 /* BaseCoordinatorContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinatorContract.swift; sourceTree = "<group>"; };
 		A87A9DC2298C84DA00D39D93 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		A87A9DC6298D087F00D39D93 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		A87A9DCA298D09D700D39D93 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -203,8 +205,8 @@
 		A87A9DBB298C828100D39D93 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				A87A9DBC298C829A00D39D93 /* BaseCoordinator.swift */,
-				A87A9DBE298C830D00D39D93 /* BaseCoordinatorContract.swift */,
+				A8418343298E352900C0F691 /* BaseCoordinator.swift */,
+				A8418344298E352900C0F691 /* BaseCoordinatorContract.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -258,6 +260,7 @@
 				A8D1D5C7298DC5E7003E230A /* WebServiceContract+Combine.swift */,
 				A8D1D5C9298DC702003E230A /* WebServiceResponse.swift */,
 				A8D1D5CB298DC77B003E230A /* WebServiceRequest.swift */,
+				A8418347298E356700C0F691 /* ApiEndpoint.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -396,11 +399,12 @@
 			files = (
 				A8D1D5C6298DC5B9003E230A /* WebServiceContract.swift in Sources */,
 				A8D1D5C4298DC58B003E230A /* WebService.swift in Sources */,
-				A87A9DBF298C830D00D39D93 /* BaseCoordinatorContract.swift in Sources */,
 				A87A9D8B298C7E6900D39D93 /* HomeViewController.swift in Sources */,
+				A8418346298E352900C0F691 /* BaseCoordinatorContract.swift in Sources */,
 				A87A9D87298C7E6900D39D93 /* AppDelegate.swift in Sources */,
 				A87A9DC7298D087F00D39D93 /* SideMenu.swift in Sources */,
 				A8D1D5C8298DC5E7003E230A /* WebServiceContract+Combine.swift in Sources */,
+				A8418348298E356700C0F691 /* ApiEndpoint.swift in Sources */,
 				A87A9DD1298D140000D39D93 /* SideMenuViewModelContract.swift in Sources */,
 				A87A9DCF298D13BB00D39D93 /* SideMenuViewModel.swift in Sources */,
 				A8D1D5CC298DC77B003E230A /* WebServiceRequest.swift in Sources */,
@@ -408,7 +412,7 @@
 				A87A9D89298C7E6900D39D93 /* SceneDelegate.swift in Sources */,
 				A87A9DC3298C84DA00D39D93 /* SideMenuViewController.swift in Sources */,
 				A87A9DCC298D09D700D39D93 /* SideMenuTableViewCell.swift in Sources */,
-				A87A9DBD298C829A00D39D93 /* BaseCoordinator.swift in Sources */,
+				A8418345298E352900C0F691 /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

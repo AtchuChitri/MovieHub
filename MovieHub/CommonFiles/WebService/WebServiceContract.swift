@@ -9,4 +9,5 @@ import Foundation
 
 public protocol WebServiceContract {
     
+    func processWebService(request: WebServiceRequest)
 }

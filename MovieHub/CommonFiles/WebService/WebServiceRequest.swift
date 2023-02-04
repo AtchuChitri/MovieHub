@@ -7,23 +7,31 @@
 
 import Foundation
 
-let defaultKey = "&api_key=0e7274f05c36db12cbe71d9ab0393d47"
+
+let defaultKey = "0e7274f05c36db12cbe71d9ab0393d47"
 public struct WebServiceRequest: Equatable {
     
     public enum HttpMethod: String {
         /// `GET` method.
         case get = "GET"
     }
-    let endPoint: String
-    var parameters:[String]
+    let endPoint: ApiEndpoint
+    var parameters:[String:String] = ["api_key": defaultKey]
     let method: WebServiceRequest.HttpMethod
+    let pathParm: String?
     
-    public init(apiEndpoint: String,
+    public init(apiEndpoint: ApiEndpoint,
                 method: WebServiceRequest.HttpMethod = .get,
-                pathParameters: [String] = []) {
+                pathParameters: [String:String]? = nil,
+                pathParm:String? = nil) {
         self.endPoint = apiEndpoint
         self.method = method
-        self.parameters = pathParameters
-        self.parameters.append(defaultKey)
+        if let pathParameters = pathParameters {
+            self.parameters = self.parameters.merging(pathParameters) { $1 }
+        }
+        self.pathParm = pathParm
     }
+    
+    
+    
 }
