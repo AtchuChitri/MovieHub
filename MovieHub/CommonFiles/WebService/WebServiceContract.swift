@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Combine
 
 public protocol WebServiceContract {
     
-    func processWebService(request: WebServiceRequest)
+    func processWebService(request: WebServiceRequest) -> Future<WebServiceResponse, WebServiceError>
 }

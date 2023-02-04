@@ -19,17 +19,11 @@
 		A87A9D9E298C7E6E00D39D93 /* MovieHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9D9D298C7E6E00D39D93 /* MovieHubTests.swift */; };
 		A87A9DA8298C7E6E00D39D93 /* MovieHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9DA7298C7E6E00D39D93 /* MovieHubUITests.swift */; };
 		A87A9DAA298C7E6E00D39D93 /* MovieHubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9DA9298C7E6E00D39D93 /* MovieHubUITestsLaunchTests.swift */; };
-		A87A9DC3298C84DA00D39D93 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9DC2298C84DA00D39D93 /* SideMenuViewController.swift */; };
-		A87A9DC7298D087F00D39D93 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9DC6298D087F00D39D93 /* SideMenu.swift */; };
-		A87A9DCC298D09D700D39D93 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9DCA298D09D700D39D93 /* SideMenuTableViewCell.swift */; };
-		A87A9DCD298D09D700D39D93 /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A87A9DCB298D09D700D39D93 /* SideMenuTableViewCell.xib */; };
-		A87A9DCF298D13BB00D39D93 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9DCE298D13BB00D39D93 /* SideMenuViewModel.swift */; };
-		A87A9DD1298D140000D39D93 /* SideMenuViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87A9DD0298D140000D39D93 /* SideMenuViewModelContract.swift */; };
 		A8D1D5C4298DC58B003E230A /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1D5C3298DC58B003E230A /* WebService.swift */; };
 		A8D1D5C6298DC5B9003E230A /* WebServiceContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1D5C5298DC5B9003E230A /* WebServiceContract.swift */; };
-		A8D1D5C8298DC5E7003E230A /* WebServiceContract+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1D5C7298DC5E7003E230A /* WebServiceContract+Combine.swift */; };
 		A8D1D5CA298DC702003E230A /* WebServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1D5C9298DC702003E230A /* WebServiceResponse.swift */; };
 		A8D1D5CC298DC77B003E230A /* WebServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1D5CB298DC77B003E230A /* WebServiceRequest.swift */; };
+		A8F9A2D3298EAACA00D3470D /* WebServiceFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9A2D2298EAACA00D3470D /* WebServiceFailure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,17 +60,11 @@
 		A87A9DA3298C7E6E00D39D93 /* MovieHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A87A9DA7298C7E6E00D39D93 /* MovieHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHubUITests.swift; sourceTree = "<group>"; };
 		A87A9DA9298C7E6E00D39D93 /* MovieHubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHubUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A87A9DC2298C84DA00D39D93 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
-		A87A9DC6298D087F00D39D93 /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
-		A87A9DCA298D09D700D39D93 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
-		A87A9DCB298D09D700D39D93 /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
-		A87A9DCE298D13BB00D39D93 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
-		A87A9DD0298D140000D39D93 /* SideMenuViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModelContract.swift; sourceTree = "<group>"; };
 		A8D1D5C3298DC58B003E230A /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		A8D1D5C5298DC5B9003E230A /* WebServiceContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceContract.swift; sourceTree = "<group>"; };
-		A8D1D5C7298DC5E7003E230A /* WebServiceContract+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebServiceContract+Combine.swift"; sourceTree = "<group>"; };
 		A8D1D5C9298DC702003E230A /* WebServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceResponse.swift; sourceTree = "<group>"; };
 		A8D1D5CB298DC77B003E230A /* WebServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceRequest.swift; sourceTree = "<group>"; };
+		A8F9A2D2298EAACA00D3470D /* WebServiceFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceFailure.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +117,6 @@
 			children = (
 				A8D1D5C1298DC355003E230A /* CommonFiles */,
 				A87A9DBB298C828100D39D93 /* Coordinator */,
-				A87A9DB7298C820000D39D93 /* SideMenu */,
 				A87A9DB6298C7FCC00D39D93 /* Home */,
 				A87A9D86298C7E6900D39D93 /* AppDelegate.swift */,
 				A87A9D88298C7E6900D39D93 /* SceneDelegate.swift */,
@@ -166,42 +153,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		A87A9DB7298C820000D39D93 /* SideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				A87A9DBA298C824C00D39D93 /* ViewModel */,
-				A87A9DB9298C824400D39D93 /* Model */,
-				A87A9DB8298C821300D39D93 /* View */,
-			);
-			path = SideMenu;
-			sourceTree = "<group>";
-		};
-		A87A9DB8298C821300D39D93 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A87A9DC1298C84C400D39D93 /* View */,
-				A87A9DC0298C84B900D39D93 /* ViewController */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A87A9DB9298C824400D39D93 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A87A9DC6298D087F00D39D93 /* SideMenu.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		A87A9DBA298C824C00D39D93 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				A87A9DCE298D13BB00D39D93 /* SideMenuViewModel.swift */,
-				A87A9DD0298D140000D39D93 /* SideMenuViewModelContract.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		A87A9DBB298C828100D39D93 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,23 +160,6 @@
 				A8418344298E352900C0F691 /* BaseCoordinatorContract.swift */,
 			);
 			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		A87A9DC0298C84B900D39D93 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				A87A9DC2298C84DA00D39D93 /* SideMenuViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		A87A9DC1298C84C400D39D93 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A87A9DCA298D09D700D39D93 /* SideMenuTableViewCell.swift */,
-				A87A9DCB298D09D700D39D93 /* SideMenuTableViewCell.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		A87A9DC4298D03D200D39D93 /* View */ = {
@@ -257,10 +191,10 @@
 			children = (
 				A8D1D5C3298DC58B003E230A /* WebService.swift */,
 				A8D1D5C5298DC5B9003E230A /* WebServiceContract.swift */,
-				A8D1D5C7298DC5E7003E230A /* WebServiceContract+Combine.swift */,
 				A8D1D5C9298DC702003E230A /* WebServiceResponse.swift */,
 				A8D1D5CB298DC77B003E230A /* WebServiceRequest.swift */,
 				A8418347298E356700C0F691 /* ApiEndpoint.swift */,
+				A8F9A2D2298EAACA00D3470D /* WebServiceFailure.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -372,7 +306,6 @@
 				A87A9D93298C7E6D00D39D93 /* LaunchScreen.storyboard in Resources */,
 				A87A9D90298C7E6D00D39D93 /* Assets.xcassets in Resources */,
 				A87A9D8E298C7E6900D39D93 /* Main.storyboard in Resources */,
-				A87A9DCD298D09D700D39D93 /* SideMenuTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,16 +335,11 @@
 				A87A9D8B298C7E6900D39D93 /* HomeViewController.swift in Sources */,
 				A8418346298E352900C0F691 /* BaseCoordinatorContract.swift in Sources */,
 				A87A9D87298C7E6900D39D93 /* AppDelegate.swift in Sources */,
-				A87A9DC7298D087F00D39D93 /* SideMenu.swift in Sources */,
-				A8D1D5C8298DC5E7003E230A /* WebServiceContract+Combine.swift in Sources */,
 				A8418348298E356700C0F691 /* ApiEndpoint.swift in Sources */,
-				A87A9DD1298D140000D39D93 /* SideMenuViewModelContract.swift in Sources */,
-				A87A9DCF298D13BB00D39D93 /* SideMenuViewModel.swift in Sources */,
+				A8F9A2D3298EAACA00D3470D /* WebServiceFailure.swift in Sources */,
 				A8D1D5CC298DC77B003E230A /* WebServiceRequest.swift in Sources */,
 				A8D1D5CA298DC702003E230A /* WebServiceResponse.swift in Sources */,
 				A87A9D89298C7E6900D39D93 /* SceneDelegate.swift in Sources */,
-				A87A9DC3298C84DA00D39D93 /* SideMenuViewController.swift in Sources */,
-				A87A9DCC298D09D700D39D93 /* SideMenuTableViewCell.swift in Sources */,
 				A8418345298E352900C0F691 /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

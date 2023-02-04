@@ -6,19 +6,26 @@
 //
 
 import Foundation
+import Combine
 
 public struct WebService: WebServiceContract {
 
-    public func processWebService(request: WebServiceRequest) {
-        guard let url = getURLRequest(request: request) else {return}
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = request.method.rawValue
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            if let data = data {
-                print(data)
-            } else if let error = error {
-                print("HTTP Request Failed \(error)")
-            }
+    public func processWebService(request: WebServiceRequest) -> Future<WebServiceResponse, WebServiceError> {
+        return Future { promise in
+            guard let url = getURLRequest(request: request) else { return promise(.failure(.invalidUrl))}
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = request.method.rawValue
+            URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                 if let responseData = data,
+                    let errorResonse = try? JSONDecoder().decode(WebServiceAPIError.self, from: responseData) {
+                     promise(.failure(WebServiceError.apiError(errorResonse)))
+                 }
+                 if let responseData = data {
+                      promise(.success(WebServiceResponse(data: responseData)))
+                 } else {
+                      promise(.failure(.invalidUrl))
+                 }
+            }.resume()
         }
     }
     
