@@ -13,17 +13,30 @@ class BaseCoordinator: BaseCoordinatorContract {
     public var children: [BaseCoordinatorContract] = []
     public var navigationController: UINavigationController
     private var navigationStack: [UIViewController] = []
+    public var tabViewController: UITabBarController?
     
-    public init(navigationController: UINavigationController) {
+    public init(navigationController: UINavigationController,
+                tabViewController:UITabBarController? = nil ) {
         self.navigationController = navigationController
+        self.tabViewController = tabViewController
     }
     
-    func start() {
+   public func start() {
         fatalError("Children should implement `start`.")
     }
     
-    func show(_ viewController: UIViewController, animated: Bool) {
+   public func show(_ viewController: UIViewController, animated: Bool) {
         // yet to start
+    }
+    
+    public func store(coordinator: BaseCoordinatorContract) {
+        children.append(coordinator)
+    }
+
+    public func free(coordinator: BaseCoordinatorContract) {
+        if let index = children.firstIndex( where: { $0 === coordinator }) {
+        children.remove(at: index)
+        }
     }
     
 }
