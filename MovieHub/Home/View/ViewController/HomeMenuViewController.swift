@@ -12,6 +12,15 @@ class HomeMenuViewController: UIViewController {
     // MARK: - Outlets and properties
     private var viewModel: HomeMenuViewModelContract!
     private let nibNameString: String = "HomeMenuViewController"
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        let menuCellNib = UINib(nibName: String(describing: MovieListTableViewCell.self),
+                                bundle: Bundle(for: MovieListTableViewCell.self))
+        tableView.register(menuCellNib, forCellReuseIdentifier: MovieListTableViewCell.cellIdentifier)
+        tableView.allowsSelection = true
+        tableView.backgroundColor = .clear
+        return tableView
+    }()
 
     // MARK: - Init
     init(viewModel: HomeMenuViewModelContract) {
@@ -24,6 +33,14 @@ class HomeMenuViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - View life cycle
+    override func loadView() {
+        self.view = tableView
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpNavigation()
@@ -33,16 +50,4 @@ class HomeMenuViewController: UIViewController {
     func setUpNavigation() {
         self.navigationItem.title = "Movie"
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
