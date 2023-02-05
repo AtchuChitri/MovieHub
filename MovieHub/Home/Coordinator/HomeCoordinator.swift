@@ -15,7 +15,7 @@ class HomeCoordinator: BaseCoordinator {
     }
     
     func showHomeMenu() {
-        let viewModel = HomeMenuViewModel()
+        let viewModel = HomeMenuViewModel(webService: WebService())
         let homeVC = HomeMenuViewController(viewModel: viewModel)
         self.navigationController.setViewControllers([homeVC], animated: true)
         self.navigationController.title = "Home"

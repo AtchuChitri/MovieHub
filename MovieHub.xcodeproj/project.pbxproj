@@ -22,6 +22,8 @@
 		A8BF6C3D298F5BFB003424BD /* HomeMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF6C3C298F5BFB003424BD /* HomeMenuViewModel.swift */; };
 		A8BF6C3F298F5E76003424BD /* HomeMenuViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF6C3E298F5E76003424BD /* HomeMenuViewModelContract.swift */; };
 		A8BF6C41298F69D9003424BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8BF6C40298F69D9003424BD /* Assets.xcassets */; };
+		A8BF6C44298F95F6003424BD /* GenreList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF6C43298F95F6003424BD /* GenreList.swift */; };
+		A8BF6C47298F99D0003424BD /* URLComponents+QueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF6C46298F99D0003424BD /* URLComponents+QueryItem.swift */; };
 		A8D1D5C4298DC58B003E230A /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1D5C3298DC58B003E230A /* WebService.swift */; };
 		A8D1D5C6298DC5B9003E230A /* WebServiceContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1D5C5298DC5B9003E230A /* WebServiceContract.swift */; };
 		A8D1D5CA298DC702003E230A /* WebServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1D5C9298DC702003E230A /* WebServiceResponse.swift */; };
@@ -68,6 +70,8 @@
 		A8BF6C3C298F5BFB003424BD /* HomeMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewModel.swift; sourceTree = "<group>"; };
 		A8BF6C3E298F5E76003424BD /* HomeMenuViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuViewModelContract.swift; sourceTree = "<group>"; };
 		A8BF6C40298F69D9003424BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A8BF6C43298F95F6003424BD /* GenreList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreList.swift; sourceTree = "<group>"; };
+		A8BF6C46298F99D0003424BD /* URLComponents+QueryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents+QueryItem.swift"; sourceTree = "<group>"; };
 		A8D1D5C3298DC58B003E230A /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		A8D1D5C5298DC5B9003E230A /* WebServiceContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceContract.swift; sourceTree = "<group>"; };
 		A8D1D5C9298DC702003E230A /* WebServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceResponse.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 		A87A9DB6298C7FCC00D39D93 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A8BF6C42298F95A4003424BD /* Model */,
 				A8BF6C3B298F5BDE003424BD /* ViewModel */,
 				A8BF6C34298F56AC003424BD /* Coordinator */,
 				A87A9DC4298D03D200D39D93 /* View */,
@@ -199,9 +204,26 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		A8BF6C42298F95A4003424BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A8BF6C43298F95F6003424BD /* GenreList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A8BF6C45298F996B003424BD /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A8BF6C46298F99D0003424BD /* URLComponents+QueryItem.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		A8D1D5C1298DC355003E230A /* CommonFiles */ = {
 			isa = PBXGroup;
 			children = (
+				A8BF6C45298F996B003424BD /* Utility */,
 				A8F9A2D4298EB8BE00D3470D /* Coordinator */,
 				A8D1D5C2298DC364003E230A /* WebService */,
 			);
@@ -369,10 +391,12 @@
 				A8418348298E356700C0F691 /* ApiEndpoint.swift in Sources */,
 				A8F9A2D8298EB8BE00D3470D /* BaseCoordinatorContract.swift in Sources */,
 				A8F9A2D3298EAACA00D3470D /* WebServiceFailure.swift in Sources */,
+				A8BF6C44298F95F6003424BD /* GenreList.swift in Sources */,
 				A8F9A2D7298EB8BE00D3470D /* BaseCoordinator.swift in Sources */,
 				A8BF6C36298F56C5003424BD /* HomeCoordinator.swift in Sources */,
 				A8D1D5CC298DC77B003E230A /* WebServiceRequest.swift in Sources */,
 				A8BF6C39298F5B40003424BD /* HomeMenuViewController.swift in Sources */,
+				A8BF6C47298F99D0003424BD /* URLComponents+QueryItem.swift in Sources */,
 				A8BF6C33298F568C003424BD /* MainTabBarViewController.swift in Sources */,
 				A8D1D5CA298DC702003E230A /* WebServiceResponse.swift in Sources */,
 				A87A9D89298C7E6900D39D93 /* SceneDelegate.swift in Sources */,
