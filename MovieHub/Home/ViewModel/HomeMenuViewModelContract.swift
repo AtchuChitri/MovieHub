@@ -11,6 +11,9 @@ import Combine
 protocol HomeMenuViewModelContract {
     var dataSource: [MovieModel] { get set }
     var reloadList: PassthroughSubject<Bool, Never> { get set }
+
+    func getIndexValue(index: Int) -> MovieModel
+    func fetchTopMenuList(_ section: HomeMenuTopSections, _ page: Int)
 }
 
 // Home Menu Sections

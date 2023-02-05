@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeMenuViewController" customModule="MovieHub" customModuleProvider="target">
             <connections>
+                <outlet property="homeTblV" destination="6dl-uF-3ud" id="Mzg-mL-4Pv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,28 +20,22 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TdT-c1-lHR">
-                    <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                    <items>
-                        <navigationItem title="Title" id="cLh-Dy-45T"/>
-                    </items>
-                </navigationBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pGI-Nb-XSB">
-                    <rect key="frame" x="10" y="113" width="373" height="715"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6dl-uF-3ud">
+                    <rect key="frame" x="10" y="59" width="373" height="759"/>
+                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Oqc-kn-gc4"/>
+                        <outlet property="delegate" destination="-1" id="X0h-VE-wUc"/>
+                    </connections>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="pGI-Nb-XSB" firstAttribute="top" secondItem="TdT-c1-lHR" secondAttribute="bottom" constant="10" id="AKi-6S-izu"/>
-                <constraint firstAttribute="trailing" secondItem="TdT-c1-lHR" secondAttribute="trailing" id="HN7-Na-cuR"/>
-                <constraint firstItem="TdT-c1-lHR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MHc-n5-LIH"/>
-                <constraint firstItem="pGI-Nb-XSB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="cXj-Bc-1fv"/>
-                <constraint firstItem="TdT-c1-lHR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="iQk-pd-sr8"/>
-                <constraint firstItem="pGI-Nb-XSB" firstAttribute="top" secondItem="TdT-c1-lHR" secondAttribute="bottom" constant="10" id="mlR-Dv-iZY"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pGI-Nb-XSB" secondAttribute="trailing" constant="10" id="ndn-T7-4Uo"/>
-                <constraint firstItem="pGI-Nb-XSB" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="10" id="oRF-8q-JJn"/>
+                <constraint firstItem="6dl-uF-3ud" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ieE-fa-ZSp"/>
+                <constraint firstItem="6dl-uF-3ud" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="jBI-ez-dwO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6dl-uF-3ud" secondAttribute="trailing" constant="10" id="k3Z-ob-Hiy"/>
+                <constraint firstItem="6dl-uF-3ud" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="xoF-fj-KTq"/>
             </constraints>
             <point key="canvasLocation" x="20.610687022900763" y="20.422535211267608"/>
         </view>

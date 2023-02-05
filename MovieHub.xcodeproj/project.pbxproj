@@ -32,6 +32,7 @@
 		A8D1D5C6298DC5B9003E230A /* WebServiceContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1D5C5298DC5B9003E230A /* WebServiceContract.swift */; };
 		A8D1D5CA298DC702003E230A /* WebServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1D5C9298DC702003E230A /* WebServiceResponse.swift */; };
 		A8D1D5CC298DC77B003E230A /* WebServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1D5CB298DC77B003E230A /* WebServiceRequest.swift */; };
+		A8E7AE4B298FEDAC00BF302B /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E7AE4A298FEDAC00BF302B /* UIView+Shadow.swift */; };
 		A8F9A2D3298EAACA00D3470D /* WebServiceFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9A2D2298EAACA00D3470D /* WebServiceFailure.swift */; };
 		A8F9A2D7298EB8BE00D3470D /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9A2D5298EB8BE00D3470D /* BaseCoordinator.swift */; };
 		A8F9A2D8298EB8BE00D3470D /* BaseCoordinatorContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F9A2D6298EB8BE00D3470D /* BaseCoordinatorContract.swift */; };
@@ -84,6 +85,7 @@
 		A8D1D5C5298DC5B9003E230A /* WebServiceContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceContract.swift; sourceTree = "<group>"; };
 		A8D1D5C9298DC702003E230A /* WebServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceResponse.swift; sourceTree = "<group>"; };
 		A8D1D5CB298DC77B003E230A /* WebServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceRequest.swift; sourceTree = "<group>"; };
+		A8E7AE4A298FEDAC00BF302B /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		A8F9A2D2298EAACA00D3470D /* WebServiceFailure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceFailure.swift; sourceTree = "<group>"; };
 		A8F9A2D5298EB8BE00D3470D /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		A8F9A2D6298EB8BE00D3470D /* BaseCoordinatorContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinatorContract.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				A8BF6C46298F99D0003424BD /* URLComponents+QueryItem.swift */,
+				A8E7AE4A298FEDAC00BF302B /* UIView+Shadow.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				A8418348298E356700C0F691 /* ApiEndpoint.swift in Sources */,
 				A8F9A2D8298EB8BE00D3470D /* BaseCoordinatorContract.swift in Sources */,
 				A8F9A2D3298EAACA00D3470D /* WebServiceFailure.swift in Sources */,
+				A8E7AE4B298FEDAC00BF302B /* UIView+Shadow.swift in Sources */,
 				A8BF6C44298F95F6003424BD /* GenreList.swift in Sources */,
 				A8F9A2D7298EB8BE00D3470D /* BaseCoordinator.swift in Sources */,
 				A8BF6C36298F56C5003424BD /* HomeCoordinator.swift in Sources */,

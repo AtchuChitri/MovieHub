@@ -9,13 +9,15 @@ import UIKit
 
 class MovieListTableViewCell: UITableViewCell {
      static let cellIdentifier = "MovieListTableViewCell"
-    @IBOutlet private weak var title: UILabel!
-    @IBOutlet private weak var releaseDate: UILabel!
-    @IBOutlet private weak var overview: UILabel!
-    @IBOutlet private weak var movieImg: UIImageView!
+    @IBOutlet  weak var title: UILabel!
+    @IBOutlet  weak var releaseDate: UILabel!
+    @IBOutlet  weak var genre: UILabel!
+    @IBOutlet  weak var movieImg: UIImageView!
+    @IBOutlet  weak var voteCount: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        applyShadow(cornerRadius: 8)
         // Initialization code
     }
 

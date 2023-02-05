@@ -6,21 +6,15 @@
 //
 
 import UIKit
+import Combine
 
 class HomeMenuViewController: UIViewController {
 
     // MARK: - Outlets and properties
-    private var viewModel: HomeMenuViewModelContract!
+    var viewModel: HomeMenuViewModelContract!
+    private var bag = Set<AnyCancellable>()
     private let nibNameString: String = "HomeMenuViewController"
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        let menuCellNib = UINib(nibName: String(describing: MovieListTableViewCell.self),
-                                bundle: Bundle(for: MovieListTableViewCell.self))
-        tableView.register(menuCellNib, forCellReuseIdentifier: MovieListTableViewCell.cellIdentifier)
-        tableView.allowsSelection = true
-        tableView.backgroundColor = .clear
-        return tableView
-    }()
+    @IBOutlet var homeTblV: UITableView!
 
     // MARK: - Init
     init(viewModel: HomeMenuViewModelContract) {
@@ -33,21 +27,34 @@ class HomeMenuViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - View life cycle
-    override func loadView() {
-        self.view = tableView
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.reloadData()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpNavigation()
+        self.setUpTableView()
+        self.dataSetUp()
         // Do any additional setup after loading the view.
+    }
+    
+    func dataSetUp() {
+        self.viewModel.reloadList.sink { _ in
+        } receiveValue: { [weak self] reload in
+            guard let self = self else { return }
+            if reload {
+                self.homeTblV.reloadData()
+            }
+        }.store(in: &bag)
     }
     
     func setUpNavigation() {
         self.navigationItem.title = "Movie"
+    }
+    func setUpTableView() {
+        let movieListNib = UINib(nibName: String(describing: MovieListTableViewCell.self),
+                                 bundle: Bundle(for: MovieListTableViewCell.self))
+        homeTblV.register(movieListNib, forCellReuseIdentifier: MovieListTableViewCell.cellIdentifier)
+        homeTblV.rowHeight = UITableView.automaticDimension
+        homeTblV.estimatedRowHeight = 110
+        homeTblV.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        homeTblV.backgroundColor = .clear
     }
 }

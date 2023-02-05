@@ -12,7 +12,7 @@ class HomeMenuViewModel: HomeMenuViewModelContract {
     
     // MARK: - properties
     private let webService: WebServiceContract
-    private var bag = Set<AnyCancellable>()
+    var bag = Set<AnyCancellable>()
     var dataSource = [MovieModel]()
     var reloadList = PassthroughSubject<Bool, Never>()
     
@@ -38,6 +38,7 @@ class HomeMenuViewModel: HomeMenuViewModelContract {
         } receiveValue: { model in
             if let results = model.results {
                 self.dataSource.append(contentsOf: results)
+                self.reloadList.send(true)
             }
         }.store(in: &bag)
         
@@ -50,5 +51,11 @@ class HomeMenuViewModel: HomeMenuViewModelContract {
             print(genreList)
         }.store(in: &bag)
         
+    }
+}
+
+extension HomeMenuViewModel {
+    func getIndexValue(index: Int) -> MovieModel {
+        return self.dataSource[index]
     }
 }
