@@ -15,6 +15,7 @@ class HomeMenuViewController: UIViewController {
     var bag = Set<AnyCancellable>()
     private let nibNameString: String = "HomeMenuViewController"
     @IBOutlet var homeTblV: UITableView!
+    @IBOutlet var topMenuCV: UICollectionView!
 
     // MARK: - Init
     init(viewModel: HomeMenuViewModelContract) {
@@ -30,6 +31,7 @@ class HomeMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpNavigation()
+        self.setUpCollectionView()
         self.setUpTableView()
         self.dataSetUp()
         // Do any additional setup after loading the view.
@@ -40,14 +42,27 @@ class HomeMenuViewController: UIViewController {
         } receiveValue: { [weak self] reload in
             guard let self = self else { return }
             if reload {
-                self.homeTblV.reloadData()
+                DispatchQueue.main.async {
+                    self.homeTblV.reloadData()
+                    self.topMenuCV.reloadData()
+                }
             }
         }.store(in: &bag)
     }
     
     func setUpNavigation() {
-        self.navigationItem.title = "Movie"
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
+    func setUpCollectionView() {
+        let topMenuCellNib = UINib(nibName: String(describing: TopMenuCollectionViewCell.self),
+                                 bundle: Bundle(for: TopMenuCollectionViewCell.self))
+        topMenuCV.register(topMenuCellNib, forCellWithReuseIdentifier: TopMenuCollectionViewCell.cellIdentifier)
+        DispatchQueue.main.async {
+            self.topMenuCV.reloadData()
+        }
+    }
+    
     func setUpTableView() {
         let movieListNib = UINib(nibName: String(describing: MovieListTableViewCell.self),
                                  bundle: Bundle(for: MovieListTableViewCell.self))

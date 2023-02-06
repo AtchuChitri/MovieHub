@@ -38,6 +38,9 @@ extension HomeMenuViewController: UITableViewDataSource {
                 }
             }.store(in: &bag)
         }
+        if indexPath.section+1 == viewModel.dataSource.count {
+            viewModel.fetchTopMenuList(viewModel.selectedMenu, viewModel.page+1)
+        }
         return cell
     }
     

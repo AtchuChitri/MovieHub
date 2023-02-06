@@ -23,9 +23,12 @@ public struct WebServiceRequest: Equatable {
     public init(apiEndpoint: ApiEndpoint,
                 method: WebServiceRequest.HttpMethod = .get,
                 pathParameters: [String:String]? = nil,
-                pathParm:String? = nil) {
+                pathParm:String? = nil,
+                page: Int = 1) {
         self.endPoint = apiEndpoint
         self.method = method
+        self.parameters.updateValue("\(page)", forKey: "page")
+        
         if let pathParameters = pathParameters {
             self.parameters = self.parameters.merging(pathParameters) { $1 }
         }

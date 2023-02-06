@@ -15,14 +15,23 @@ class HomeMenuViewModel: HomeMenuViewModelContract {
     var bag = Set<AnyCancellable>()
     var dataSource = [MovieModel]()
     var reloadList = PassthroughSubject<Bool, Never>()
-    
+    var topMenuSource = ["Now Playing","Popular","Top Rated","Upcoming"]
+    var selectedMenu = HomeMenuTopSections.nowPlaying
+    private var totalRecords: Int = 0
+    var page: Int = 1
     // MARK: - Init webService
     public init(webService: WebServiceContract) {
         self.webService = webService
-        fetchTopMenuList(.topRated,1)
+        fetchTopMenuList(.nowPlaying,1)
     }
-    
+}
+
+extension HomeMenuViewModel {
     func fetchTopMenuList(_ section: HomeMenuTopSections, _ page: Int = 1) {
+        if selectedMenu != section {
+            self.dataSource.removeAll()
+            selectedMenu = section
+        }
         var apiEndPoint: ApiEndpoint
         switch section {
         case .nowPlaying:
@@ -34,8 +43,9 @@ class HomeMenuViewModel: HomeMenuViewModelContract {
         case .upcoming:
             apiEndPoint = .movie(.upComing)
         }
-        self.webService.processWebService(request: WebServiceRequest(apiEndpoint: apiEndPoint), as: moviesModel.self).sink { _ in
+        self.webService.processWebService(request: WebServiceRequest(apiEndpoint: apiEndPoint, page: page), as: moviesModel.self).sink { _ in
         } receiveValue: { model in
+            self.totalRecords = model.totalRecords
             if let results = model.results {
                 self.dataSource.append(contentsOf: results)
                 self.reloadList.send(true)
@@ -63,4 +73,18 @@ extension HomeMenuViewModel {
     func getIndexValue(index: Int) -> MovieModel {
         return self.dataSource[index]
     }
+    func getTopMenuItem(index: Int) -> String {
+        return topMenuSource[index]
+    }
+    func getSelectedItem(index: Int) -> Bool {
+        return selectedMenu.rawValue == index
+    }
+    
+    func checkReloadList() -> Bool {
+        return dataSource.count == self.totalRecords
+    }
+}
+
+extension HomeMenuViewModel {
+    
 }

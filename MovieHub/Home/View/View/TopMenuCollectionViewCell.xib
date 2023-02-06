@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TopMenuCollectionViewCell" customModule="MovieHub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="201" height="42"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="201" height="42"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTC-7Y-o4Z">
+                        <rect key="frame" x="5" y="5" width="191" height="16"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFL-6C-ahb">
+                        <rect key="frame" x="5" y="39" width="191" height="2"/>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="wbI-2q-XrE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="GFL-6C-ahb" secondAttribute="bottom" constant="1" id="2wE-PF-I3D"/>
+                <constraint firstItem="gTC-7Y-o4Z" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="AtH-fm-Uyi"/>
+                <constraint firstItem="GFL-6C-ahb" firstAttribute="leading" secondItem="gTC-7Y-o4Z" secondAttribute="leading" id="B6M-2e-kRD"/>
+                <constraint firstItem="gTC-7Y-o4Z" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="NLV-Hu-8PP"/>
+                <constraint firstAttribute="trailing" secondItem="gTC-7Y-o4Z" secondAttribute="trailing" constant="5" id="dFX-2k-YrH"/>
+                <constraint firstItem="GFL-6C-ahb" firstAttribute="trailing" secondItem="gTC-7Y-o4Z" secondAttribute="trailing" id="s3i-gq-qeL"/>
+                <constraint firstItem="GFL-6C-ahb" firstAttribute="centerX" secondItem="gTC-7Y-o4Z" secondAttribute="centerX" id="u8R-W4-C50"/>
+            </constraints>
+            <size key="customSize" width="201" height="42"/>
+            <connections>
+                <outlet property="title" destination="gTC-7Y-o4Z" id="ebR-Xh-gaQ"/>
+                <outlet property="underline" destination="GFL-6C-ahb" id="Ypn-x0-t0s"/>
+            </connections>
+            <point key="canvasLocation" x="93.89312977099236" y="16.901408450704228"/>
+        </collectionViewCell>
+    </objects>
+</document>
