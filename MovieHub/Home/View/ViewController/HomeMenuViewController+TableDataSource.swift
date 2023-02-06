@@ -27,10 +27,17 @@ extension HomeMenuViewController: UITableViewDataSource {
                                                         MovieListTableViewCell.cellIdentifier) as? MovieListTableViewCell else {
            return UITableViewCell()
        }
-        let model = viewModel.getIndexValue(index: indexPath.row)
+        let model = viewModel.getIndexValue(index: indexPath.section)
         cell.title.text = model.title
         cell.releaseDate.text = model.releaseDate
         cell.genre.text = model.originalTitle
+        if let imgUrl = model.poster {
+            viewModel.fetchImage(url: imgUrl).sink { imgData in
+                DispatchQueue.main.async {
+                    cell.movieImg.image = UIImage(data: imgData)
+                }
+            }.store(in: &bag)
+        }
         return cell
     }
     

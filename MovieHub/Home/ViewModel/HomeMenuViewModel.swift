@@ -52,6 +52,11 @@ class HomeMenuViewModel: HomeMenuViewModelContract {
         }.store(in: &bag)
         
     }
+    
+    func fetchImage(url: String) -> ImgDownloaderFuture {
+            return webService.getImageFromURL(url: url)
+    }
+    
 }
 
 extension HomeMenuViewModel {

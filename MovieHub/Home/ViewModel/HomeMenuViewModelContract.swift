@@ -14,6 +14,7 @@ protocol HomeMenuViewModelContract {
 
     func getIndexValue(index: Int) -> MovieModel
     func fetchTopMenuList(_ section: HomeMenuTopSections, _ page: Int)
+    func fetchImage(url: String) -> ImgDownloaderFuture
 }
 
 // Home Menu Sections

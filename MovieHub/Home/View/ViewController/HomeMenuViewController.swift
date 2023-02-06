@@ -7,12 +7,12 @@
 
 import UIKit
 import Combine
-
+typealias Image = UIImage?
 class HomeMenuViewController: UIViewController {
 
     // MARK: - Outlets and properties
     var viewModel: HomeMenuViewModelContract!
-    private var bag = Set<AnyCancellable>()
+    var bag = Set<AnyCancellable>()
     private let nibNameString: String = "HomeMenuViewController"
     @IBOutlet var homeTblV: UITableView!
 

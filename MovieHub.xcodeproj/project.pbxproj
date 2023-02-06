@@ -28,6 +28,8 @@
 		A8BF6C4C298F9C94003424BD /* MovieListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8BF6C4A298F9C94003424BD /* MovieListTableViewCell.xib */; };
 		A8BF6C4E298F9D2C003424BD /* HomeMenuViewController+TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF6C4D298F9D2C003424BD /* HomeMenuViewController+TableDataSource.swift */; };
 		A8BF6C50298FA145003424BD /* MoviesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF6C4F298FA145003424BD /* MoviesModel.swift */; };
+		A8CD18942990672800F1782A /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = A8CD18932990672800F1782A /* AlamofireImage */; };
+		A8CD189629906AC800F1782A /* WebServiceContract+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CD189529906AC800F1782A /* WebServiceContract+AlamofireImage.swift */; };
 		A8D1D5C4298DC58B003E230A /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1D5C3298DC58B003E230A /* WebService.swift */; };
 		A8D1D5C6298DC5B9003E230A /* WebServiceContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1D5C5298DC5B9003E230A /* WebServiceContract.swift */; };
 		A8D1D5CA298DC702003E230A /* WebServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D1D5C9298DC702003E230A /* WebServiceResponse.swift */; };
@@ -81,6 +83,7 @@
 		A8BF6C4A298F9C94003424BD /* MovieListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListTableViewCell.xib; sourceTree = "<group>"; };
 		A8BF6C4D298F9D2C003424BD /* HomeMenuViewController+TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeMenuViewController+TableDataSource.swift"; sourceTree = "<group>"; };
 		A8BF6C4F298FA145003424BD /* MoviesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesModel.swift; sourceTree = "<group>"; };
+		A8CD189529906AC800F1782A /* WebServiceContract+AlamofireImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebServiceContract+AlamofireImage.swift"; sourceTree = "<group>"; };
 		A8D1D5C3298DC58B003E230A /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		A8D1D5C5298DC5B9003E230A /* WebServiceContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceContract.swift; sourceTree = "<group>"; };
 		A8D1D5C9298DC702003E230A /* WebServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceResponse.swift; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8CD18942990672800F1782A /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +262,7 @@
 			children = (
 				A8D1D5C3298DC58B003E230A /* WebService.swift */,
 				A8D1D5C5298DC5B9003E230A /* WebServiceContract.swift */,
+				A8CD189529906AC800F1782A /* WebServiceContract+AlamofireImage.swift */,
 				A8D1D5C9298DC702003E230A /* WebServiceResponse.swift */,
 				A8D1D5CB298DC77B003E230A /* WebServiceRequest.swift */,
 				A8418347298E356700C0F691 /* ApiEndpoint.swift */,
@@ -291,6 +296,9 @@
 			dependencies = (
 			);
 			name = MovieHub;
+			packageProductDependencies = (
+				A8CD18932990672800F1782A /* AlamofireImage */,
+			);
 			productName = MovieHub;
 			productReference = A87A9D83298C7E6900D39D93 /* MovieHub.app */;
 			productType = "com.apple.product-type.application";
@@ -363,6 +371,9 @@
 				Base,
 			);
 			mainGroup = A87A9D7A298C7E6900D39D93;
+			packageReferences = (
+				A8CD18922990672700F1782A /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+			);
 			productRefGroup = A87A9D84298C7E6900D39D93 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -415,6 +426,7 @@
 				A8418348298E356700C0F691 /* ApiEndpoint.swift in Sources */,
 				A8F9A2D8298EB8BE00D3470D /* BaseCoordinatorContract.swift in Sources */,
 				A8F9A2D3298EAACA00D3470D /* WebServiceFailure.swift in Sources */,
+				A8CD189629906AC800F1782A /* WebServiceContract+AlamofireImage.swift in Sources */,
 				A8E7AE4B298FEDAC00BF302B /* UIView+Shadow.swift in Sources */,
 				A8BF6C44298F95F6003424BD /* GenreList.swift in Sources */,
 				A8F9A2D7298EB8BE00D3470D /* BaseCoordinator.swift in Sources */,
@@ -772,6 +784,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A8CD18922990672700F1782A /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A8CD18932990672800F1782A /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A8CD18922990672700F1782A /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A87A9D7B298C7E6900D39D93 /* Project object */;
 }
