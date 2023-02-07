@@ -34,18 +34,22 @@ class HomeMenuViewController: UIViewController {
         self.setUpCollectionView()
         self.setUpTableView()
         self.dataSetUp()
+        self.viewModel.fetchGenreList()
         // Do any additional setup after loading the view.
     }
     
     func dataSetUp() {
         self.viewModel.reloadList.sink { _ in
-        } receiveValue: { [weak self] reload in
+        } receiveValue: { [weak self] event in
             guard let self = self else { return }
-            if reload {
+            switch event {
+            case .reload:
                 DispatchQueue.main.async {
                     self.homeTblV.reloadData()
                     self.topMenuCV.reloadData()
                 }
+            case .startLoader, .stopLoader:
+                break
             }
         }.store(in: &bag)
     }

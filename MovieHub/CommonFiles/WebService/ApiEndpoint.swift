@@ -16,6 +16,7 @@ public enum ApiEndpoint: Equatable {
     case movie(Movie)
     case genre(Genre)
     case detail(Details)
+    case search(Search)
     
     func getEndPoint() -> String {
         switch self {
@@ -25,6 +26,8 @@ public enum ApiEndpoint: Equatable {
             return genre.rawValue
         case .detail(let detail):
             return detail.rawValue
+        case .search(let search):
+            return search.rawValue
         }
     }
 }
@@ -42,4 +45,8 @@ public enum Genre: String {
 
 public enum Details: String {
     case moveDetail = "/3/movie/"
+}
+
+public enum Search: String {
+    case search = "/3/search/movie"
 }

@@ -10,7 +10,7 @@ import Combine
 
 protocol HomeMenuViewModelContract {
     var dataSource: [MovieModel] { get set }
-    var reloadList: PassthroughSubject<Bool, Never> { get set }
+    var reloadList: PassthroughSubject<HomeMenuScreenActionEvent, Never> { get set }
     var topMenuSource: [String] { get set }
     var selectedMenu:HomeMenuTopSections { get set }
     var page:Int { get set }
@@ -21,6 +21,8 @@ protocol HomeMenuViewModelContract {
     func getTopMenuItem(index: Int) -> String
     func getSelectedItem(index: Int) -> Bool
     func checkReloadList() -> Bool
+    func fetchGenreList()
+    func getGenre(_ genreId: [Int]) -> String?
 }
 
 // Home Menu Sections
@@ -29,4 +31,10 @@ enum HomeMenuTopSections: Int {
     case popular
     case topRated
     case upcoming
+}
+
+enum HomeMenuScreenActionEvent {
+   case reload
+   case startLoader
+   case stopLoader
 }

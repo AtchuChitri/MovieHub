@@ -1,20 +1,20 @@
 //
-//  HomeMenuViewController+TableDataSource.swift
+//  SearchViewController+TableView.swift
 //  MovieHub
 //
-//  Created by Atchu on 5/2/23.
+//  Created by Atchu on 8/2/23.
 //
 
 import Foundation
 import UIKit
 
-extension HomeMenuViewController: UITableViewDelegate {
+extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
 }
 
-extension HomeMenuViewController: UITableViewDataSource {
+extension SearchViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.dataSource.count
     }
@@ -38,17 +38,12 @@ extension HomeMenuViewController: UITableViewDataSource {
                 }
             }.store(in: &bag)
         }
-        if let genreList = model.genreIds, let genre = viewModel.getGenre(genreList) {
-            cell.genre.text = genre
-        } 
         if (indexPath.section == viewModel.dataSource.count - 1) && viewModel.checkReloadList() {
-            viewModel.fetchTopMenuList(viewModel.selectedMenu, viewModel.page+1)
-        }
-        if let vote = model.voteCount, let average = model.voteAverage {
-            cell.voteCount.text = "Vote Count: \(vote), Average:\(average)"
+            viewModel.fetchSearchResults(viewModel.searchText, viewModel.page+1)
         }
         return cell
     }
     
     
 }
+

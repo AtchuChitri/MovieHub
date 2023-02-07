@@ -22,9 +22,9 @@ final class MovieGenreManger {
         }
     }
     
-    func fetchGenreList() -> [genre]? {
+    func fetchGenreStr(_ list: [Int]) -> String? {
         concurrentQueue.sync {
-            return self.genreList
+            return self.genreList?.filter{list.contains($0.id)}.map{$0.name}.joined(separator: ",")
         }
     }
         

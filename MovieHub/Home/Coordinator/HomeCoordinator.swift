@@ -20,9 +20,10 @@ class HomeCoordinator: BaseCoordinator {
         self.navigationController.setViewControllers([homeVC], animated: true)
         self.navigationController.title = "Home"
         navigationController.tabBarItem.image = UIImage.init(named: "home")
-        let searchNavigation = UINavigationController(rootViewController: UIViewController())
-        searchNavigation.title = "Search"
-        searchNavigation.tabBarItem.image = UIImage.init(named: "search")
-        self.tabViewController?.setViewControllers([navigationController,searchNavigation], animated: false)
+        self.tabViewController?.setViewControllers([navigationController], animated: false)
+        let serachNavigation = UINavigationController()
+        let searchC = SearchCoordinator(navigationController: serachNavigation, tabViewController: self.tabViewController)
+        searchC.parentCoordinator = self
+        searchC.start()
     }
 }

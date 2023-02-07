@@ -14,15 +14,15 @@ class HomeMenuViewModel: HomeMenuViewModelContract {
     private let webService: WebServiceContract
     var bag = Set<AnyCancellable>()
     var dataSource = [MovieModel]()
-    var reloadList = PassthroughSubject<Bool, Never>()
+    var reloadList = PassthroughSubject<HomeMenuScreenActionEvent, Never>()
     var topMenuSource = ["Now Playing","Popular","Top Rated","Upcoming"]
     var selectedMenu = HomeMenuTopSections.nowPlaying
     private var totalRecords: Int = 0
     var page: Int = 1
+    var sharedInstance = MovieGenreManger.shared
     // MARK: - Init webService
     public init(webService: WebServiceContract) {
         self.webService = webService
-        fetchTopMenuList(.nowPlaying,1)
     }
 }
 
@@ -32,6 +32,7 @@ extension HomeMenuViewModel {
             self.dataSource.removeAll()
             selectedMenu = section
         }
+        self.page = page
         var apiEndPoint: ApiEndpoint
         switch section {
         case .nowPlaying:
@@ -48,7 +49,7 @@ extension HomeMenuViewModel {
             self.totalRecords = model.totalRecords
             if let results = model.results {
                 self.dataSource.append(contentsOf: results)
-                self.reloadList.send(true)
+                self.reloadList.send(.reload)
             }
         }.store(in: &bag)
         
@@ -57,8 +58,10 @@ extension HomeMenuViewModel {
     func fetchGenreList() {
         self.webService.processWebService(request: WebServiceRequest(apiEndpoint: .genre(.genre)), as: GenreList.self).sink { errorResponse in
             print(errorResponse)
-        } receiveValue: { genreList in
-            print(genreList)
+        } receiveValue: { [weak self] genreList in
+            guard let self = self else { return }
+            self.sharedInstance.updateGenreList(genreList.genres)
+            self.fetchTopMenuList(.nowPlaying,1)
         }.store(in: &bag)
         
     }
@@ -71,7 +74,10 @@ extension HomeMenuViewModel {
 
 extension HomeMenuViewModel {
     func getIndexValue(index: Int) -> MovieModel {
-        return self.dataSource[index]
+        guard let model = dataSource[safeIndex: index] else {
+            fatalError("dataSource was not found at index \(index)")
+        }
+        return model
     }
     func getTopMenuItem(index: Int) -> String {
         return topMenuSource[index]
@@ -81,7 +87,10 @@ extension HomeMenuViewModel {
     }
     
     func checkReloadList() -> Bool {
-        return dataSource.count == self.totalRecords
+        return dataSource.count != self.totalRecords
+    }
+    func getGenre(_ genreId: [Int]) -> String? {
+      return sharedInstance.fetchGenreStr(genreId)
     }
 }
 
