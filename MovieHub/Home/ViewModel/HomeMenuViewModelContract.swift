@@ -10,10 +10,12 @@ import Combine
 
 protocol HomeMenuViewModelContract {
     var dataSource: [MovieModel] { get set }
-    var reloadList: PassthroughSubject<HomeMenuScreenActionEvent, Never> { get set }
+    var reloadList: PassthroughSubject<ScreenActionEvent, Never> { get set }
     var topMenuSource: [String] { get set }
     var selectedMenu:HomeMenuTopSections { get set }
     var page:Int { get set }
+    var movieSelected: PassthroughSubject<MovieOptionEvents, Never> { get set }
+
     
     func getIndexValue(index: Int) -> MovieModel
     func fetchTopMenuList(_ section: HomeMenuTopSections, _ page: Int)
@@ -33,8 +35,12 @@ enum HomeMenuTopSections: Int {
     case upcoming
 }
 
-enum HomeMenuScreenActionEvent {
+enum ScreenActionEvent {
    case reload
    case startLoader
    case stopLoader
+}
+
+enum MovieOptionEvents {
+    case movieDetail(Int)
 }

@@ -7,15 +7,24 @@
 
 import Foundation
 import UIKit
+import Combine
 
 class HomeCoordinator: BaseCoordinator {
-    
+    private var bag = Set<AnyCancellable>()
+
     override func start() {
         showHomeMenu()
     }
     
     func showHomeMenu() {
         let viewModel = HomeMenuViewModel(webService: WebService())
+        viewModel.movieSelected.sink {[weak self] events in
+            guard let self = self else { return }
+            switch events {
+            case .movieDetail(let movieId):
+                self.showMovieDetail(movieId)
+            }
+        }.store(in:&bag)
         let homeVC = HomeMenuViewController(viewModel: viewModel)
         self.navigationController.setViewControllers([homeVC], animated: true)
         self.navigationController.title = "Home"
@@ -26,4 +35,17 @@ class HomeCoordinator: BaseCoordinator {
         searchC.parentCoordinator = self
         searchC.start()
     }
+    
+    func showMovieDetail(_ id: Int) {
+        let detailModel = MovieDetailViewModel(webService: WebService(), movieId: id)
+        detailModel.eventCallBack.sink { event in
+            if event == .back {
+                self.pop()
+            }
+        }.store(in: &bag)
+        let detailVC = MovieDetailViewController(viewModel: detailModel)
+        self.show(detailVC, animated: true)
+    }
 }
+
+

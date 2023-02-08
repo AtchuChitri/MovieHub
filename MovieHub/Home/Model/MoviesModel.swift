@@ -27,8 +27,8 @@ struct MovieModel: Codable {
     let originalTitle: String?
     let poster: String?
     let genreIds: [Int]?
-    let voteAverage : Int?
-    let voteCount: Int?
+    let voteAverage : Float?
+    let voteCount: Float?
     
     enum CodingKeys: String, CodingKey {
         case id

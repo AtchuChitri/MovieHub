@@ -18,6 +18,7 @@ protocol SearchViewModelContract {
     func getIndexValue(index: Int) -> MovieModel
     func fetchImage(url: String) -> ImgDownloaderFuture
     func checkReloadList() -> Bool
+    func getGenre(_ genreId: [Int]) -> String? 
 }
 
 enum SearchScreenActionEvent {

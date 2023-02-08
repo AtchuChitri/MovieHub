@@ -38,6 +38,12 @@ extension SearchViewController: UITableViewDataSource {
                 }
             }.store(in: &bag)
         }
+        if let genreList = model.genreIds, let genre = viewModel.getGenre(genreList) {
+            cell.genre.text = genre
+        }
+        if let vote = model.voteCount, let average = model.voteAverage {
+            cell.voteCount.text = "Vote Count: \(vote), Average:\(average)"
+        }
         if (indexPath.section == viewModel.dataSource.count - 1) && viewModel.checkReloadList() {
             viewModel.fetchSearchResults(viewModel.searchText, viewModel.page+1)
         }

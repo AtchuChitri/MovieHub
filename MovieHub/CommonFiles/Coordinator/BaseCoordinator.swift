@@ -26,12 +26,22 @@ class BaseCoordinator: BaseCoordinatorContract {
     }
     
    public func show(_ viewController: UIViewController, animated: Bool) {
-        // yet to start
+       navigationController.pushViewController(viewController, animated: animated)
+       navigationStack.append(viewController)
     }
     
     public func store(coordinator: BaseCoordinatorContract) {
         children.append(coordinator)
     }
+    
+    func pop() {
+        navigationController.popViewController(animated: true)
+        if navigationStack.count > 0 {
+            navigationStack.removeLast()
+        }
+        removeCoordinatorIfNeeded()
+    }
+    
 
     public func free(coordinator: BaseCoordinatorContract) {
         if let index = children.firstIndex( where: { $0 === coordinator }) {
@@ -39,4 +49,12 @@ class BaseCoordinator: BaseCoordinatorContract {
         }
     }
     
+}
+
+extension BaseCoordinator {
+    private func removeCoordinatorIfNeeded() {
+        if navigationStack.isEmpty {
+            parentCoordinator?.free(coordinator: self)
+        }
+    }
 }

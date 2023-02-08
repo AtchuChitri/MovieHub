@@ -7,10 +7,15 @@
 
 import Foundation
 import UIKit
+import Combine
 
 extension HomeMenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = viewModel.getIndexValue(index: indexPath.section)
+        self.viewModel.movieSelected.send(.movieDetail(model.id))
     }
 }
 

@@ -16,6 +16,8 @@ public protocol BaseCoordinatorContract: AnyObject {
     func start()
     /// Navigation Actions
     func show(_ viewController: UIViewController, animated: Bool)
+    func free(coordinator: BaseCoordinatorContract)
+    func pop()
 }
 
 protocol CoordinatorDelegate: AnyObject {

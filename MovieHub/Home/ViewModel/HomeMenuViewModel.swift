@@ -14,12 +14,15 @@ class HomeMenuViewModel: HomeMenuViewModelContract {
     private let webService: WebServiceContract
     var bag = Set<AnyCancellable>()
     var dataSource = [MovieModel]()
-    var reloadList = PassthroughSubject<HomeMenuScreenActionEvent, Never>()
+    var reloadList = PassthroughSubject<ScreenActionEvent, Never>()
     var topMenuSource = ["Now Playing","Popular","Top Rated","Upcoming"]
     var selectedMenu = HomeMenuTopSections.nowPlaying
     private var totalRecords: Int = 0
     var page: Int = 1
-    var sharedInstance = MovieGenreManger.shared
+    private var sharedInstance = MovieGenreManger.shared
+    var movieSelected = PassthroughSubject<MovieOptionEvents, Never>()
+
+    
     // MARK: - Init webService
     public init(webService: WebServiceContract) {
         self.webService = webService

@@ -17,6 +17,7 @@ class SearchViewModel: SearchViewModelContract {
     private var totalRecords: Int = 0
     var page: Int = 1
     var searchText: String = ""
+    private var sharedInstance = MovieGenreManger.shared
 
     // MARK: - Init webService
     public init(webService: WebServiceContract) {
@@ -55,6 +56,8 @@ extension SearchViewModel {
     func checkReloadList() -> Bool {
         return dataSource.count != self.totalRecords
     }
-    
+    func getGenre(_ genreId: [Int]) -> String? {
+      return sharedInstance.fetchGenreStr(genreId)
+    }
 }
 
