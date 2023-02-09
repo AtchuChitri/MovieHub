@@ -53,4 +53,7 @@ extension MovieDetailViewModel {
     func getAdult() -> String {
         return dataSource?.adult ?? false ? "PG18" : "PG13"
     }
+    func getSpokenLanguage() -> String? {
+        return dataSource?.spokenLanguages?.map{$0.name ?? ""}.joined(separator: ",")
+    }
 }

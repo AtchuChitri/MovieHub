@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="fYB-2a-LIQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
+                        <rect key="frame" x="5" y="0.0" width="310" height="95"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syV-dF-2Ea">
                                 <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="20"/>
@@ -43,10 +43,10 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="fYB-2a-LIQ" secondAttribute="trailing" id="6mS-15-mLG"/>
+                    <constraint firstAttribute="trailing" secondItem="fYB-2a-LIQ" secondAttribute="trailing" constant="5" id="6mS-15-mLG"/>
                     <constraint firstAttribute="bottom" secondItem="fYB-2a-LIQ" secondAttribute="bottom" id="Cq3-ls-FMJ"/>
                     <constraint firstItem="fYB-2a-LIQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Lt7-nG-bf0"/>
-                    <constraint firstItem="fYB-2a-LIQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hch-JZ-h1r"/>
+                    <constraint firstItem="fYB-2a-LIQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="hch-JZ-h1r"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

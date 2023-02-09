@@ -13,7 +13,8 @@ protocol SearchViewModelContract {
     var reloadList: PassthroughSubject<SearchScreenActionEvent, Never> { get set }
     var searchText: String { get set }
     var page: Int { get set }
-    
+    var movieSelected: PassthroughSubject<MovieOptionEvents, Never> { get set }
+
     func fetchSearchResults(_ query: String, _ page: Int)
     func getIndexValue(index: Int) -> MovieModel
     func fetchImage(url: String) -> ImgDownloaderFuture

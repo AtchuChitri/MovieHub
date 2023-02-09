@@ -23,6 +23,7 @@ struct MovieDetailModel: Codable {
     let releaseDate: String?
     let runtime: Double?
     let adult: Bool?
+    let revenue: Double?
     
     enum CodingKeys: String, CodingKey {
         case backdropPath = "backdrop_path"
@@ -40,6 +41,7 @@ struct MovieDetailModel: Codable {
         case releaseDate = "release_date"
         case runtime
         case adult
+        case revenue
         
         
         

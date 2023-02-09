@@ -19,9 +19,9 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="5" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Sq6-Ay-RQR">
+                <tableView clipsSubviews="YES" contentMode="scaleAspectFit" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sq6-Ay-RQR">
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="j6a-hb-v5P"/>
                         <outlet property="delegate" destination="-1" id="oSD-qf-ddS"/>
@@ -32,8 +32,8 @@
             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Sq6-Ay-RQR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4S6-TU-pnB"/>
+                <constraint firstItem="Sq6-Ay-RQR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6QO-DN-SNL"/>
                 <constraint firstItem="Sq6-Ay-RQR" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="DDw-oH-RSi"/>
-                <constraint firstItem="Sq6-Ay-RQR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hWE-Zz-Ct6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Sq6-Ay-RQR" secondAttribute="trailing" id="loS-rH-jbC"/>
             </constraints>
             <point key="canvasLocation" x="-22.137404580152669" y="-1.4084507042253522"/>

@@ -49,6 +49,7 @@ class MovieDetailViewController: UIViewController {
         leftBarButton.tintColor = UIColor.darkGray
         self.navigationItem.leftBarButtonItem = leftBarButton
         self.tabBarController?.tabBar.isHidden = true
+
     }
     @objc
     func backButtonAction() {
@@ -68,11 +69,15 @@ class MovieDetailViewController: UIViewController {
                                 bundle: Bundle(for: OverviewTableViewCell.self))
         detailTblV.register(overViewNib, forCellReuseIdentifier: OverviewTableViewCell.cellIdentifier)
         
+        let statusViewNib = UINib(nibName: String(describing: StatusTableViewCell.self),
+                                bundle: Bundle(for: StatusTableViewCell.self))
+        detailTblV.register(statusViewNib, forCellReuseIdentifier: StatusTableViewCell.cellIdentifier)
+        
         detailTblV.rowHeight = UITableView.automaticDimension
         detailTblV.estimatedRowHeight = 110
         detailTblV.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         detailTblV.backgroundColor = .clear
-        self.detailTblV.estimatedSectionFooterHeight = 16.0 // spacing between Sections
+        self.detailTblV.contentInset = UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 0);
     }
     
     func dataSetUp() {

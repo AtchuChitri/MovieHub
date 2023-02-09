@@ -18,6 +18,7 @@ class SearchViewModel: SearchViewModelContract {
     var page: Int = 1
     var searchText: String = ""
     private var sharedInstance = MovieGenreManger.shared
+    var movieSelected = PassthroughSubject<MovieOptionEvents, Never>()
 
     // MARK: - Init webService
     public init(webService: WebServiceContract) {

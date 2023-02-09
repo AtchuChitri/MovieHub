@@ -14,7 +14,7 @@ extension MovieDetailViewController: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,6 +66,17 @@ extension MovieDetailViewController: UITableViewDataSource {
             cell.tagLineLbl.text = viewModel.dataSource?.tagline
             cell.overviewLbl.text = viewModel.dataSource?.overview
             return cell
+        case .statusView:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier:
+                                                            StatusTableViewCell.cellIdentifier) as? StatusTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            cell.statusLbl.text = viewModel.dataSource?.status
+            cell.budgetLbl.text = "\(viewModel.dataSource?.budget ?? 0)"
+            cell.revenueLbl.text = "\(viewModel.dataSource?.revenue ?? 0)"
+            cell.orginalLangLbl.text = viewModel.getSpokenLanguage()
+            return cell
         case .none:
             return UITableViewCell()
         }
@@ -83,6 +94,8 @@ extension MovieDetailViewController: UITableViewDelegate {
             return 65
         case .overview:
             return UITableView.automaticDimension
+        case .statusView:
+            return 205
         case .none:
             return UITableView.automaticDimension
         }

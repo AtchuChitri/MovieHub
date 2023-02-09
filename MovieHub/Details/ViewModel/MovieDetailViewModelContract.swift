@@ -20,6 +20,7 @@ protocol MovieDetailViewModelContract {
     func getRunTime() -> String?
     func getReleaseDate() -> String?
     func getAdult() -> String
+    func getSpokenLanguage() -> String?
 }
 
 enum DetailScreenCallBack {
@@ -30,4 +31,5 @@ enum DetailSections: Int {
     case bannerView
     case genreView
     case overview
+    case statusView
 }
