@@ -37,6 +37,9 @@ class SearchViewController: UIViewController {
         dataSetUp()
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     func dataSetUp() {
         self.viewModel.reloadList.sink { _ in

@@ -17,8 +17,17 @@ protocol MovieDetailViewModelContract {
     func fetchMovieDetails()
     func fetchImage(url: String) -> ImgDownloaderFuture
     func fetchGenre() -> String?
+    func getRunTime() -> String?
+    func getReleaseDate() -> String?
+    func getAdult() -> String
 }
 
 enum DetailScreenCallBack {
     case back
+}
+
+enum DetailSections: Int {
+    case bannerView
+    case genreView
+    case overview
 }

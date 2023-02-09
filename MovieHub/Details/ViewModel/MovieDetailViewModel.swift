@@ -43,4 +43,14 @@ extension MovieDetailViewModel {
     func fetchGenre() -> String? {
         self.dataSource?.genres.map{$0.name}.joined(separator: ",")
     }
+    func getRunTime() -> String? {
+        let runtime = (dataSource?.runtime ?? 0) * 60
+        return runtime.asString(style: .brief)
+    }
+    func getReleaseDate() -> String? {
+        return dataSource?.releaseDate?.getDateString()
+    }
+    func getAdult() -> String {
+        return dataSource?.adult ?? false ? "PG18" : "PG13"
+    }
 }
