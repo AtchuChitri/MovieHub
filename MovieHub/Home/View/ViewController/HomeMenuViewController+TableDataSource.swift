@@ -34,7 +34,7 @@ extension HomeMenuViewController: UITableViewDataSource {
        }
         let model = viewModel.getIndexValue(index: indexPath.section)
         cell.title.text = model.title
-        cell.releaseDate.text = model.releaseDate
+        cell.releaseDate.text = model.releaseDate?.getDateString()
         cell.genre.text = model.originalTitle
         if let imgUrl = model.poster {
             viewModel.fetchImage(url: imgUrl).sink { imgData in
@@ -52,6 +52,7 @@ extension HomeMenuViewController: UITableViewDataSource {
         if let vote = model.voteCount, let average = model.voteAverage {
             cell.voteCount.text = "Vote Count: \(vote), Average:\(average)"
         }
+        cell.selectionStyle = .none
         return cell
     }
     

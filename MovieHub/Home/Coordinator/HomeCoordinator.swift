@@ -32,8 +32,14 @@ class HomeCoordinator: BaseCoordinator {
         self.tabViewController?.setViewControllers([navigationController], animated: false)
         let serachNavigation = UINavigationController()
         let searchC = SearchCoordinator(navigationController: serachNavigation, tabViewController: self.tabViewController)
+        self.store(coordinator: searchC)
         searchC.parentCoordinator = self
         searchC.start()
+        let favNavigation = UINavigationController()
+        let favC = FavouriteCoordinator(navigationController: favNavigation, tabViewController: self.tabViewController)
+        favC.parentCoordinator = self
+        self.store(coordinator: favC)
+        favC.start()
     }
     
     func showMovieDetail(_ id: Int) {

@@ -7,12 +7,13 @@
 
 import Foundation
 import Combine
+typealias MakeFavouriteFuture = Future<Bool, Never>
 
 protocol MovieDetailViewModelContract {
     var dataSource:MovieDetailModel? { get set }
     var eventAction: PassthroughSubject<ScreenActionEvent, Never> { get set }
     var eventCallBack: PassthroughSubject<DetailScreenCallBack, Never>{ get set }
-
+    var isFavioute: Bool { get set }
     
     func fetchMovieDetails()
     func fetchImage(url: String) -> ImgDownloaderFuture
@@ -21,6 +22,7 @@ protocol MovieDetailViewModelContract {
     func getReleaseDate() -> String?
     func getAdult() -> String
     func getSpokenLanguage() -> String?
+    func makeFavourite()
 }
 
 enum DetailScreenCallBack {

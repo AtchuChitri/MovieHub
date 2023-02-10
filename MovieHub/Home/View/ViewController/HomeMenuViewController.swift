@@ -16,6 +16,7 @@ class HomeMenuViewController: UIViewController {
     private let nibNameString: String = "HomeMenuViewController"
     @IBOutlet var homeTblV: UITableView!
     @IBOutlet var topMenuCV: UICollectionView!
+    @IBOutlet var activityLoader: UIActivityIndicatorView!
 
     // MARK: - Init
     init(viewModel: HomeMenuViewModelContract) {
@@ -51,8 +52,13 @@ class HomeMenuViewController: UIViewController {
                     self.homeTblV.reloadData()
                     self.topMenuCV.reloadData()
                 }
-            case .startLoader, .stopLoader:
+            case .startLoader:
+                self.activityLoader.startAnimating()
+            case .stopLoader:
+                self.activityLoader.stopAnimating()
+            case .deletedRecord , .saveRecord:
                 break
+            
             }
         }.store(in: &bag)
     }

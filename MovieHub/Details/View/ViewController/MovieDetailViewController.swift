@@ -42,18 +42,27 @@ class MovieDetailViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
         let iconButton = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
         iconButton.setImage(UIImage(named: "back"), for: .normal)
+        
+        let rightBarBtn = UIBarButtonItem(image: UIImage(named: viewModel.isFavioute ? "favoriteF": "favorites"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.makeFavourite))
+        self.navigationItem.rightBarButtonItem = rightBarBtn
+
         let leftBarButton = UIBarButtonItem(image: UIImage(named: "back"),
                                             style: UIBarButtonItem.Style.plain, target: self,
                                             action: #selector(self.backButtonAction))
         leftBarButton.isAccessibilityElement = true
-        leftBarButton.tintColor = UIColor.darkGray
+       // leftBarButton.tintColor = UIColor.darkGray
         self.navigationItem.leftBarButtonItem = leftBarButton
         self.tabBarController?.tabBar.isHidden = true
+        
 
     }
     @objc
     func backButtonAction() {
         self.viewModel.eventCallBack.send(.back)
+    }
+    @objc
+    func makeFavourite() {
+        self.viewModel.makeFavourite()
     }
     
     func setUpTableView() {
@@ -88,9 +97,14 @@ class MovieDetailViewController: UIViewController {
             case .reload:
                 DispatchQueue.main.async {
                     self.detailTblV.reloadData()
+                    self.setUpNavigation()
                 }
             case .startLoader, .stopLoader:
                 break
+            case .deletedRecord,.saveRecord:
+                DispatchQueue.main.async {
+                    self.setUpNavigation()
+                }
             }
         }.store(in: &bag)
     }

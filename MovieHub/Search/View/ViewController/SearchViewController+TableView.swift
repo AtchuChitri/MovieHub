@@ -33,7 +33,7 @@ extension SearchViewController: UITableViewDataSource {
        }
         let model = viewModel.getIndexValue(index: indexPath.section)
         cell.title.text = model.title
-        cell.releaseDate.text = model.releaseDate
+        cell.releaseDate.text = model.releaseDate?.getDateString()
         cell.genre.text = model.originalTitle
         if let imgUrl = model.poster {
             viewModel.fetchImage(url: imgUrl).sink { imgData in
@@ -51,6 +51,7 @@ extension SearchViewController: UITableViewDataSource {
         if (indexPath.section == viewModel.dataSource.count - 1) && viewModel.checkReloadList() {
             viewModel.fetchSearchResults(viewModel.searchText, viewModel.page+1)
         }
+        cell.selectionStyle = .none
         return cell
     }
     

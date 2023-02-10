@@ -39,6 +39,8 @@ enum ScreenActionEvent {
    case reload
    case startLoader
    case stopLoader
+   case deletedRecord
+   case saveRecord
 }
 
 enum MovieOptionEvents {

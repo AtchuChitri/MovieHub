@@ -24,6 +24,7 @@ struct MovieDetailModel: Codable {
     let runtime: Double?
     let adult: Bool?
     let revenue: Double?
+    let id: Double
     
     enum CodingKeys: String, CodingKey {
         case backdropPath = "backdrop_path"
@@ -42,6 +43,7 @@ struct MovieDetailModel: Codable {
         case runtime
         case adult
         case revenue
+        case id
         
         
         
