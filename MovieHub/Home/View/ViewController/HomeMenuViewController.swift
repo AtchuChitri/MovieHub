@@ -53,9 +53,13 @@ class HomeMenuViewController: UIViewController {
                     self.topMenuCV.reloadData()
                 }
             case .startLoader:
-                self.activityLoader.startAnimating()
+                DispatchQueue.main.async {
+                    self.activityLoader.startAnimating()
+                }
             case .stopLoader:
-                self.activityLoader.stopAnimating()
+                DispatchQueue.main.async {
+                    self.activityLoader.stopAnimating()
+                }
             case .deletedRecord , .saveRecord:
                 break
             

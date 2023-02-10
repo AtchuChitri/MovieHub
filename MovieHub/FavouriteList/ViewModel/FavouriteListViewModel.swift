@@ -9,12 +9,14 @@ import Foundation
 import Combine
 
 class FavouriteListViewModel: FavouriteListViewModelContract {
+    
     private let coreData: CoreDataProviderContract
     private let webService: WebServiceContract
     var dataSource = [MovieDetail]()
     var bag = Set<AnyCancellable>()
     var reloadList = PassthroughSubject<Bool, Never>()
     var movieSelected = PassthroughSubject<MovieOptionEvents, Never>()
+    private var sharedInstance = MovieGenreManger.shared
 
     // MARK: - Init webService
     public init(webService: WebServiceContract) {
@@ -31,6 +33,9 @@ extension FavouriteListViewModel {
     }
     func getReleaseDate(_ date: String?) -> String? {
         return date?.getDateString()
+    }
+    func getGenre(_ genreId: [Int]) -> String? {
+      return sharedInstance.fetchGenreStr(genreId)
     }
 }
 

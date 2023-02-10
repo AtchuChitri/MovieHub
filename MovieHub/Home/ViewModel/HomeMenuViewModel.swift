@@ -53,12 +53,14 @@ extension HomeMenuViewModel {
             if let results = model.results {
                 self.dataSource.append(contentsOf: results)
                 self.reloadList.send(.reload)
+                self.reloadList.send(.stopLoader)
             }
         }.store(in: &bag)
         
     }
     
     func fetchGenreList() {
+        self.reloadList.send(.startLoader)
         self.webService.processWebService(request: WebServiceRequest(apiEndpoint: .genre(.genre)), as: GenreList.self).sink { errorResponse in
             print(errorResponse)
         } receiveValue: { [weak self] genreList in

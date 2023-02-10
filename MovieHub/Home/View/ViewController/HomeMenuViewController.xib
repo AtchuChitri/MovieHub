@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeMenuViewController" customModule="MovieHub" customModuleProvider="target">
             <connections>
+                <outlet property="activityLoader" destination="pOP-Wx-Iy3" id="j2h-gE-c5n"/>
                 <outlet property="homeTblV" destination="6dl-uF-3ud" id="Mzg-mL-4Pv"/>
                 <outlet property="topMenuCV" destination="49X-19-mR1" id="7iD-Xt-pkp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -22,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6dl-uF-3ud">
-                    <rect key="frame" x="10" y="114" width="373" height="704"/>
+                    <rect key="frame" x="10" y="55" width="373" height="797"/>
                     <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Oqc-kn-gc4"/>
@@ -30,7 +31,7 @@
                     </connections>
                 </tableView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="49X-19-mR1">
-                    <rect key="frame" x="10" y="59" width="373" height="45"/>
+                    <rect key="frame" x="10" y="0.0" width="373" height="45"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="R0Q-71-var"/>

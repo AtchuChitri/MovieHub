@@ -31,6 +31,7 @@ class CoreDataProvider: CoreDataProviderContract {
             movie.setValue(detail.adult, forKey: "adult")
             movie.setValue(detail.overview, forKey: "overview")
             movie.setValue(detail.originalLanguage, forKey: "originalLanguage")
+            movie.setValue(detail.genres.map{$0.id}, forKey: "genres")
             do {
                 try self.managedContext.save()
                 promise(.success(true))

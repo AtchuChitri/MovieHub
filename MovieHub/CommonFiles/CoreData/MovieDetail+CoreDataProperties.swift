@@ -31,6 +31,7 @@ extension MovieDetail {
     @NSManaged public var title: String?
     @NSManaged public var voteAverage: Float
     @NSManaged public var voteCount: Float
+    @NSManaged public var genres: [Int]?
 
 }
 

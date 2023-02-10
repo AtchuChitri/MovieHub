@@ -40,16 +40,18 @@ class MovieDetailViewController: UIViewController {
     
     func setUpNavigation() {
         navigationController?.setNavigationBarHidden(false, animated: true)
-        let iconButton = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
-        iconButton.setImage(UIImage(named: "back"), for: .normal)
-        
+       
         let rightBarBtn = UIBarButtonItem(image: UIImage(named: viewModel.isFavioute ? "favoriteF": "favorites"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.makeFavourite))
         self.navigationItem.rightBarButtonItem = rightBarBtn
+        rightBarBtn.tintColor = .white
+
 
         let leftBarButton = UIBarButtonItem(image: UIImage(named: "back"),
                                             style: UIBarButtonItem.Style.plain, target: self,
                                             action: #selector(self.backButtonAction))
         leftBarButton.isAccessibilityElement = true
+        leftBarButton.tintColor = .white
+
        // leftBarButton.tintColor = UIColor.darkGray
         self.navigationItem.leftBarButtonItem = leftBarButton
         self.tabBarController?.tabBar.isHidden = true

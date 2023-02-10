@@ -38,6 +38,9 @@ extension FavouriteListViewController: UITableViewDataSource {
                 }
             }.store(in: &bag)
         }
+        if let genreList = model.genres, let genre = viewModel.getGenre(genreList) {
+            cell.genre.text = genre
+        }
         cell.selectionStyle = .none
         return cell
     }
