@@ -47,21 +47,26 @@ extension HomeMenuViewModel {
         case .upcoming:
             apiEndPoint = .movie(.upComing)
         }
-        self.webService.processWebService(request: WebServiceRequest(apiEndpoint: apiEndPoint, page: page), as: moviesModel.self).sink { _ in
-        } receiveValue: { model in
-            self.totalRecords = model.totalRecords
-            if let results = model.results {
-                self.dataSource.append(contentsOf: results)
-                self.reloadList.send(.reload)
-                self.reloadList.send(.stopLoader)
-            }
-        }.store(in: &bag)
+      
+        self.webService.processWebService(request: WebServiceRequest(apiEndpoint: apiEndPoint, page: page), as: moviesModel.self).subscribe(on: DispatchQueue.global(qos: .userInitiated)).sink { _ in
+            } receiveValue: { [weak self] model in
+                self?.totalRecords = model.totalRecords
+                if let results = model.results {
+                    DispatchQueue.main.async {
+                        self?.dataSource.append(contentsOf: results)
+                        self?.reloadList.send(.reload)
+                        self?.reloadList.send(.stopLoader)
+                    }
+                 
+                }
+            }.store(in: &self.bag)
+       
         
     }
     
     func fetchGenreList() {
         self.reloadList.send(.startLoader)
-        self.webService.processWebService(request: WebServiceRequest(apiEndpoint: .genre(.genre)), as: GenreList.self).sink { errorResponse in
+        self.webService.processWebService(request: WebServiceRequest(apiEndpoint: .genre(.genre)), as: GenreList.self).subscribe(on: DispatchQueue.global()).sink { errorResponse in
             print(errorResponse)
         } receiveValue: { [weak self] genreList in
             guard let self = self else { return }

@@ -20,6 +20,10 @@ class MovieListTableViewCell: UITableViewCell {
         applyShadow(cornerRadius: 8)
         // Initialization code
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.movieImg.image = nil
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
